@@ -11,7 +11,7 @@ const links = [
 const LogoBox = () => (
   <div className="flex items-center justify-center">
     <Link to="/">
-      <img src="/logo.png" alt="logo" className="w-24" />
+      <img src="/logo.svg" alt="logo" className="w-24" />
     </Link>
   </div>
 );
