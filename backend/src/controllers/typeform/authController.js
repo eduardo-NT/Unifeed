@@ -1,6 +1,8 @@
 const { v4: uuidv4 } = require('uuid');
-const typeformService = require('../services/typeformService');
-const memoryStore = require('../utils/memoryStore');
+const supabaseClient = require('../../config/supabaseClient');
+const typeformService = require('../../services/typeform/typeformService');
+const userService = require('../../services/userService');
+const memoryStore = require('../../utils/memoryStore');
 
 /**
  * Authentication Controller

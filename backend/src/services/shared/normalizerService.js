@@ -1,5 +1,5 @@
 /**
- * Data Normalizer Service
+ * Data Normalizer Service - Updated for Gemini Integration
  * Transforms raw Typeform responses into a unified schema
  * This creates a consistent format that can be used across different survey platforms
  */
@@ -225,15 +225,36 @@ class NormalizerService {
 
   /**
    * Generate summary statistics for normalized responses
+   * Updated to use Gemini instead of OpenAI/Anthropic
    */
-  generateResponseSummary(normalizedData) {
+  generateResponseSummary(normalizedData, options = {}) {
+    // Check if batch processing is enabled and should be used
+    const batchConfig = require('../config/batchConfig');
+    
+    if (batchConfig.features.enableBatchProcessing && options.useBatchProcessing !== false) {
+      console.log('🧠 Using Gemini-powered batch processing for enhanced summary...');
+      
+      try {
+        const batchSummarizerService = require('./batchSummarizerService');
+        return batchSummarizerService.processSurveyData(normalizedData, {
+          incrementalOnly: options.incrementalOnly || false,
+          batchSize: options.batchSize
+        });
+      } catch (error) {
+        console.error('❌ Gemini batch processing failed, falling back to basic summary:', error.message);
+        // Fall through to basic summary
+      }
+    }
+    
+    // Original basic summary generation
     const summary = {
       totalResponses: normalizedData.responses.length,
       completedResponses: normalizedData.responses.filter(r => r.completed).length,
       questionStats: {},
       responseRate: 0,
       avgResponseTime: null,
-      generatedAt: new Date().toISOString()
+      generatedAt: new Date().toISOString(),
+      processingType: 'basic'
     };
 
     if (normalizedData.responses.length > 0) {

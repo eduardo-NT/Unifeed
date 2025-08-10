@@ -1,6 +1,6 @@
-const typeformService = require('../services/typeformService');
-const normalizerService = require('../services/normalizerService');
-const memoryStore = require('../utils/memoryStore');
+const typeformService = require('../../services/typeform/typeformService');
+const normalizerService = require('../../services/shared/normalizerService');
+const memoryStore = require('../../utils/memoryStore');
 
 /**
  * Typeform Controller
@@ -25,7 +25,12 @@ class TypeformController {
         until: req.query.until || null,
         completed: req.query.completed !== undefined ? req.query.completed === 'true' : null,
         includeRaw: req.query.includeRaw !== undefined ? req.query.includeRaw === 'true' : false,
-        includeSummary: req.query.includeSummary !== undefined ? req.query.includeSummary === 'true' : false
+        includeSummary: req.query.includeSummary !== undefined ? req.query.includeSummary === 'true' : false,
+        
+        // Batch processing options
+        useBatchProcessing: req.query.useBatchProcessing !== 'false', // Default to true
+        incrementalOnly: req.query.incrementalOnly === 'true', // Default to false
+        batchSize: parseInt(req.query.batchSize) || undefined
       };
 
       console.log(`📊 Fetching responses for form: ${formId}`);
@@ -80,7 +85,11 @@ class TypeformController {
       let summary = null;
       if (options.includeSummary) {
         console.log('📈 Generating response summary...');
-        summary = normalizerService.generateResponseSummary(normalizedData);
+        summary = await normalizerService.generateResponseSummary(normalizedData, {
+          useBatchProcessing: options.useBatchProcessing,
+          incrementalOnly: options.incrementalOnly,
+          batchSize: options.batchSize
+        });
       }
 
       // Prepare response

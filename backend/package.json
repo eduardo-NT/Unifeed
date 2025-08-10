@@ -1,7 +1,7 @@
 {
   "name": "unifeed-backend-v1",
   "version": "1.0.0",
-  "description": "Unifeed v1 backend - OAuth-enabled Typeform data fetching and normalization",
+  "description": "Unifeed v1 backend - OAuth-enabled Typeform data fetching and normalization with Gemini AI",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -13,7 +13,9 @@
     "oauth",
     "survey",
     "feedback",
-    "api"
+    "api",
+    "gemini",
+    "ai"
   ],
   "author": "",
   "license": "ISC",
@@ -22,7 +24,8 @@
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
     "cors": "^2.8.5",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "@google/generative-ai": "^0.18.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

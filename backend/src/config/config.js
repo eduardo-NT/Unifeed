@@ -26,6 +26,21 @@ const config = {
     
     // OAuth Scopes
     scopes: ['accounts:read', 'forms:read', 'responses:read']
+  },
+  
+  // AI Service Configuration
+  ai: {
+    openaiApiKey: process.env.OPENAI_API_KEY,
+    anthropicApiKey: process.env.ANTHROPIC_API_KEY,
+    provider: process.env.AI_PROVIDER || 'openai', // 'openai' or 'anthropic'
+    enableAISummary: process.env.ENABLE_AI_SUMMARY !== 'false'
+  },
+  
+  // Batch Processing Configuration
+  batchProcessing: {
+    enabled: process.env.ENABLE_BATCH_PROCESSING !== 'false',
+    defaultBatchSize: parseInt(process.env.BATCH_SIZE) || 150,
+    processingTimeout: parseInt(process.env.PROCESSING_TIMEOUT) || 30000
   }
 };
 
